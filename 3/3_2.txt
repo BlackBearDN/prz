@@ -1,0 +1,154 @@
+K2	STORAGE 2
+K4	STORAGE 3
+K5	STORAGE 4
+
+	GENERATE 5,4
+	TRANSFER .5,KK1,KK2
+KK1	TEST L Q$S1L,5,CANCEL
+	QUEUE S1L
+	SEIZE K1
+	DEPART S1L
+	ADVANCE 10,3
+	RELEASE K1
+	TRANSFER ,OUT1
+KK2	TEST L Q$S2L,5,CANCEL
+	QUEUE S2L
+	SEIZE K2
+	DEPART S2L
+	ADVANCE 20,5
+	RELEASE K2
+	TRANSFER ,OUT1
+
+OUT1	TRANSFER .5,KK3,KK4
+KK3	TEST L Q$S3L,5,CANCEL
+	QUEUE S3L
+	SEIZE K3
+	DEPART S3L
+	ADVANCE 20,5
+	RELEASE K3
+	TRANSFER ,OUT2
+KK4	TEST L Q$S4L,5,CANCEL
+	QUEUE S4L
+	SEIZE K4
+	DEPART S4L
+	ADVANCE 10,4
+	RELEASE K4
+	TRANSFER ,OUT2
+
+OUT2	GATE SNF K5,OUT3
+	TEST L Q$S5L,5,CANCEL
+	QUEUE S5L
+	ENTER K5
+	DEPART S5L
+	ADVANCE 15,3
+	LEAVE K5
+OUT3	TERMINATE 1
+	START 720
+	CLEAR
+CANCEL	TERMINATE
+
+
+Отчет:
+
+
+              GPSS World Simulation Report - PRZ_3_VAR_5_PROG_2.16.1
+
+
+                   Thursday, March 02, 2023 14:22:28  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000           5753.795    40        4          3
+
+
+              NAME                       VALUE  
+          CANCEL                         40.000
+          K1                          10005.000
+          K2                          10000.000
+          K3                          10008.000
+          K4                          10001.000
+          K5                          10002.000
+          KK1                             3.000
+          KK2                            10.000
+          KK3                            18.000
+          KK4                            25.000
+          OUT1                           17.000
+          OUT2                           32.000
+          OUT3                           39.000
+          S1L                         10004.000
+          S2L                         10003.000
+          S3L                         10007.000
+          S4L                         10006.000
+          S5L                         10009.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE          1175             0       0
+                    2    TRANSFER          1175             0       0
+KK1                 3    TEST               634             0       0
+                    4    QUEUE              565             3       0
+                    5    SEIZE              562             0       0
+                    6    DEPART             562             0       0
+                    7    ADVANCE            562             1       0
+                    8    RELEASE            561             0       0
+                    9    TRANSFER           561             0       0
+KK2                10    TEST               541             0       0
+                   11    QUEUE              292             4       0
+                   12    SEIZE              288             0       0
+                   13    DEPART             288             0       0
+                   14    ADVANCE            288             1       0
+                   15    RELEASE            287             0       0
+                   16    TRANSFER           287             0       0
+OUT1               17    TRANSFER           848             0       0
+KK3                18    TEST               412             0       0
+                   19    QUEUE              291             4       0
+                   20    SEIZE              287             0       0
+                   21    DEPART             287             0       0
+                   22    ADVANCE            287             1       0
+                   23    RELEASE            286             0       0
+                   24    TRANSFER           286             0       0
+KK4                25    TEST               436             0       0
+                   26    QUEUE              436             0       0
+                   27    SEIZE              436             0       0
+                   28    DEPART             436             0       0
+                   29    ADVANCE            436             0       0
+                   30    RELEASE            436             0       0
+                   31    TRANSFER           436             0       0
+OUT2               32    GATE               722             0       0
+                   33    TEST               722             0       0
+                   34    QUEUE              722             0       0
+                   35    ENTER              722             0       0
+                   36    DEPART             722             0       0
+                   37    ADVANCE            722             2       0
+                   38    LEAVE              720             0       0
+OUT3               39    TERMINATE          720             0       0
+CANCEL             40    TERMINATE          439             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ K2                 288    0.999      19.952  1     1153    0    0     0      4
+ K4                 436    0.758      10.010  1        0    0    0     0      0
+ K1                 562    0.968       9.914  1     1168    0    0     0      3
+ K3                 287    0.995      19.947  1     1137    0    0     0      4
+
+
+QUEUE              MAX CONT. ENTRY ENTRY(0) AVE.CONT. AVE.TIME   AVE.(-0) RETRY
+ S2L                 5    4    292      1     4.297     84.670     84.961   0
+ S1L                 5    3    565     26     2.772     28.228     29.589   0
+ S4L                 5    0    436    154     0.545      7.198     11.130   0
+ S3L                 5    4    291      1     4.169     82.422     82.707   0
+ S5L                 1    0    722    722     0.000      0.000      0.000   0
+
+
+STORAGE            CAP. REM. MIN. MAX.  ENTRIES AVL.  AVE.C. UTIL. RETRY DELAY
+ K2                  2    2   0     0        0   1    0.000  0.000    0    0
+ K4                  3    3   0     0        0   1    0.000  0.000    0    0
+ K5                  4    2   0     4      722   1    1.881  0.470    0    0
+
+
+FEC XN   PRI         BDT      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
+  1168    0        5757.039   1168      7      8
+  1176    0        5760.972   1176      0      1
+  1153    0        5764.259   1153     14     15
+  1135    0        5766.894   1135     37     38
+  1162    0        5767.749   1162     37     38
+  1137    0        5773.740   1137     22     23

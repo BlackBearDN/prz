@@ -1,0 +1,48 @@
+GENERATE 8,2
+
+SEIZE FIRST
+ADVANCE 3,1
+RELEASE FIRST
+
+SEIZE SECOND
+ADVANCE 5,4
+RELEASE SECOND
+
+TERMINATE 1
+START 1
+
+Отчет:
+
+
+              GPSS World Simulation Report - PRZ_1_VAR_5.6.1
+
+
+                   Thursday, March 02, 2023 14:38:55  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000             16.215     8        2          0
+
+
+              NAME                       VALUE  
+          FIRST                       10000.000
+          SECOND                      10001.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE             1             0       0
+                    2    SEIZE                1             0       0
+                    3    ADVANCE              1             0       0
+                    4    RELEASE              1             0       0
+                    5    SEIZE                1             0       0
+                    6    ADVANCE              1             0       0
+                    7    RELEASE              1             0       0
+                    8    TERMINATE            1             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ FIRST                1    0.232       3.762  1        0    0    0     0      0
+ SECOND               1    0.190       3.084  1        0    0    0     0      0
+
+
+FEC XN   PRI         BDT      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
+     2    0          18.480      2      0      1

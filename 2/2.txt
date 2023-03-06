@@ -1,0 +1,100 @@
+K2	STORAGE 2
+K4	STORAGE 3
+K5	STORAGE 4
+	GENERATE 5,4
+	TRANSFER BOTH,KK1,KK2
+KK1	SEIZE K1
+	ADVANCE 10,3
+	RELEASE K1
+	TRANSFER ,OUT1
+KK2	ENTER K2
+	ADVANCE 20,5
+	LEAVE K2
+
+OUT1	TRANSFER BOTH,KK3,KK4
+KK3	SEIZE K3
+	ADVANCE 20,5
+	RELEASE K3
+	TRANSFER ,OUT2
+KK4	ENTER K4
+	ADVANCE 10,4
+	LEAVE K4
+
+OUT2	GATE SNF K5,OUT3
+	ENTER K5
+	ADVANCE 15,3
+	LEAVE K5
+OUT3	TERMINATE 1
+	START 100
+
+Отчет:
+
+
+              GPSS World Simulation Report - PRZ_2_VAR_7.4.1
+
+
+                   Thursday, March 02, 2023 13:30:22  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000            563.833    22        2          3
+
+
+              NAME                       VALUE  
+          K1                          10003.000
+          K2                          10000.000
+          K3                          10004.000
+          K4                          10001.000
+          K5                          10002.000
+          KK1                             3.000
+          KK2                             7.000
+          KK3                            11.000
+          KK4                            15.000
+          OUT1                           10.000
+          OUT2                           18.000
+          OUT3                           22.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE           106             0       0
+                    2    TRANSFER           106             0       0
+KK1                 3    SEIZE               53             0       0
+                    4    ADVANCE             53             1       0
+                    5    RELEASE             52             0       0
+                    6    TRANSFER            52             0       0
+KK2                 7    ENTER               53             0       0
+                    8    ADVANCE             53             2       0
+                    9    LEAVE               51             0       0
+OUT1               10    TRANSFER           103             0       0
+KK3                11    SEIZE               23             0       0
+                   12    ADVANCE             23             1       0
+                   13    RELEASE             22             0       0
+                   14    TRANSFER            22             0       0
+KK4                15    ENTER               80             0       0
+                   16    ADVANCE             80             1       0
+                   17    LEAVE               79             0       0
+OUT2               18    GATE               101             0       0
+                   19    ENTER               91             0       0
+                   20    ADVANCE             91             1       0
+                   21    LEAVE               90             0       0
+OUT3               22    TERMINATE          100             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ K1                  53    0.930       9.893  1      105    0    0     0      0
+ K3                  23    0.769      18.860  1      103    0    0     0      0
+
+
+STORAGE            CAP. REM. MIN. MAX.  ENTRIES AVL.  AVE.C. UTIL. RETRY DELAY
+ K2                  2    0   0     2       53   1    1.781  0.891    0    0
+ K4                  3    2   0     3       80   1    1.405  0.468    0    0
+ K5                  4    3   0     4       91   1    2.440  0.610    0    0
+
+
+FEC XN   PRI         BDT      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
+   102    0         564.472    102     16     17
+   105    0         568.394    105      4      5
+   107    0         571.006    107      0      1
+   104    0         571.074    104      8      9
+   103    0         571.725    103     12     13
+   101    0         571.752    101     20     21
+   106    0         587.713    106      8      9

@@ -1,0 +1,142 @@
+K2	STORAGE 2
+K4	STORAGE 3
+K5	STORAGE 4
+
+	GENERATE 5,4
+	TRANSFER .5,KK1,KK2
+KK1	QUEUE S1L
+	SEIZE K1
+	DEPART S1L
+	ADVANCE 10,3
+	RELEASE K1
+	TRANSFER ,OUT1
+KK2	QUEUE S2L
+	SEIZE K2
+	DEPART S2L
+	ADVANCE 20,5
+	RELEASE K2
+	TRANSFER ,OUT1
+
+OUT1	TRANSFER .5,KK3,KK4
+KK3	QUEUE S3L
+	SEIZE K3
+	DEPART S3L
+	ADVANCE 20,5
+	RELEASE K3
+	TRANSFER ,OUT2
+KK4	QUEUE S4L
+	SEIZE K4
+	DEPART S4L
+	ADVANCE 10,4
+	RELEASE K4
+	TRANSFER ,OUT2
+
+OUT2	GATE SNF K5,OUT3
+	QUEUE S5L
+	ENTER K5
+	DEPART S5L
+	ADVANCE 15,3
+	LEAVE K5
+OUT3	TERMINATE
+	GENERATE 480
+	TERMINATE 1
+	START 3
+	CLEAR
+
+Отчет:
+
+
+              GPSS World Simulation Report - PRZ_3_VAR_5_PROG_1_2.31.1
+
+
+                   Thursday, March 02, 2023 14:26:37  
+
+           START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
+                0.000           1440.000    36        4          3
+
+
+              NAME                       VALUE  
+          K1                          10005.000
+          K2                          10000.000
+          K3                          10008.000
+          K4                          10001.000
+          K5                          10002.000
+          KK1                             3.000
+          KK2                             9.000
+          KK3                            16.000
+          KK4                            22.000
+          OUT1                           15.000
+          OUT2                           28.000
+          OUT3                           34.000
+          S1L                         10004.000
+          S2L                         10003.000
+          S3L                         10007.000
+          S4L                         10006.000
+          S5L                         10009.000
+
+
+ LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
+                    1    GENERATE           279             0       0
+                    2    TRANSFER           279             0       0
+KK1                 3    QUEUE              140             0       0
+                    4    SEIZE              140             0       0
+                    5    DEPART             140             0       0
+                    6    ADVANCE            140             0       0
+                    7    RELEASE            140             0       0
+                    8    TRANSFER           140             0       0
+KK2                 9    QUEUE              139            65       0
+                   10    SEIZE               74             0       0
+                   11    DEPART              74             0       0
+                   12    ADVANCE             74             1       0
+                   13    RELEASE             73             0       0
+                   14    TRANSFER            73             0       0
+OUT1               15    TRANSFER           213             0       0
+KK3                16    QUEUE              110            41       0
+                   17    SEIZE               69             0       0
+                   18    DEPART              69             0       0
+                   19    ADVANCE             69             1       0
+                   20    RELEASE             68             0       0
+                   21    TRANSFER            68             0       0
+KK4                22    QUEUE              103             0       0
+                   23    SEIZE              103             0       0
+                   24    DEPART             103             0       0
+                   25    ADVANCE            103             0       0
+                   26    RELEASE            103             0       0
+                   27    TRANSFER           103             0       0
+OUT2               28    GATE               171             0       0
+                   29    QUEUE              171             0       0
+                   30    ENTER              171             0       0
+                   31    DEPART             171             0       0
+                   32    ADVANCE            171             0       0
+                   33    LEAVE              171             0       0
+OUT3               34    TERMINATE          171             0       0
+                   35    GENERATE             3             0       0
+                   36    TERMINATE            3             0       0
+
+
+FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
+ K2                  74    0.995      19.355  1      155    0    0     0     65
+ K4                 103    0.739      10.330  1        0    0    0     0      0
+ K1                 140    0.972      10.001  1        0    0    0     0      0
+ K3                  69    0.980      20.449  1      181    0    0     0     41
+
+
+QUEUE              MAX CONT. ENTRY ENTRY(0) AVE.CONT. AVE.TIME   AVE.(-0) RETRY
+ S2L                66   65    139      1    31.588    327.238    329.609   0
+ S1L                 7    0    140      8     2.330     23.968     25.421   0
+ S4L                 4    0    103     38     0.373      5.208      8.252   0
+ S3L                41   41    110      1    16.565    216.849    218.838   0
+ S5L                 1    0    171    171     0.000      0.000      0.000   0
+
+
+STORAGE            CAP. REM. MIN. MAX.  ENTRIES AVL.  AVE.C. UTIL. RETRY DELAY
+ K2                  2    2   0     0        0   1    0.000  0.000    0    0
+ K4                  3    3   0     0        0   1    0.000  0.000    0    0
+ K5                  4    4   0     4      171   1    1.787  0.447    0    0
+
+
+FEC XN   PRI         BDT      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
+   283    0        1440.258    283      0      1
+   181    0        1443.381    181     19     20
+   155    0        1453.276    155     12     13
+   284    0        1920.000    284      0     35
