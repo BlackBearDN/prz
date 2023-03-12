@@ -11,18 +11,18 @@ RELEASE SECOND
 TERMINATE
 GENERATE 600
 TERMINATE 1
-START 1
+START 100
 
 Отчет:
 
 
-              GPSS World Simulation Report - PRZ_1_VAR_5_PROG_1.7.1
+              GPSS World Simulation Report - Untitled Model 1.6.1
 
 
-                   Thursday, March 02, 2023 14:40:34  
+                   Sunday, March 12, 2023 19:26:49  
 
            START TIME           END TIME  BLOCKS  FACILITIES  STORAGES
-                0.000            600.000    10        2          0
+                0.000          60000.000    10        2          0
 
 
               NAME                       VALUE  
@@ -31,25 +31,24 @@ START 1
 
 
  LABEL              LOC  BLOCK TYPE     ENTRY COUNT CURRENT COUNT RETRY
-                    1    GENERATE            74             0       0
-                    2    SEIZE               74             0       0
-                    3    ADVANCE             74             1       0
-                    4    RELEASE             73             0       0
-                    5    SEIZE               73             0       0
-                    6    ADVANCE             73             1       0
-                    7    RELEASE             72             0       0
-                    8    TERMINATE           72             0       0
-                    9    GENERATE             1             0       0
-                   10    TERMINATE            1             0       0
+                    1    GENERATE          7516             0       0
+                    2    SEIZE             7516             0       0
+                    3    ADVANCE           7516             1       0
+                    4    RELEASE           7515             0       0
+                    5    SEIZE             7515             0       0
+                    6    ADVANCE           7515             0       0
+                    7    RELEASE           7515             0       0
+                    8    TERMINATE         7515             0       0
+                    9    GENERATE           100             0       0
+                   10    TERMINATE          100             0       0
 
 
 FACILITY         ENTRIES  UTIL.   AVE. TIME AVAIL. OWNER PEND INTER RETRY DELAY
- FIRST               74    0.377       3.058  1       75    0    0     0      0
- SECOND              73    0.608       4.995  1       74    0    0     0      0
+ FIRST             7516    0.374       2.988  1     7616    0    0     0      0
+ SECOND            7515    0.628       5.015  1        0    0    0     0      0
 
 
 FEC XN   PRI         BDT      ASSEM  CURRENT  NEXT  PARAMETER    VALUE
-    75    0         600.038     75      3      4
-    74    0         603.172     74      6      7
-    76    0         603.588     76      0      1
-    77    0        1200.000     77      0      9
+  7616    0       60001.801   7616      3      4
+  7617    0       60007.477   7617      0      1
+  7618    0       60600.000   7618      0      9
